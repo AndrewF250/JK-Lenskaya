@@ -1,0 +1,2226 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЖК «Ленская» — Премиальный жилой комплекс в Перми</title>
+    <meta name="description" content="Премиальный жилой комплекс бизнес-класса на правом берегу Камы. Современная архитектура, благоустроенная территория, квартиры от 25 до 120 м².">
+    <meta name="keywords" content="ЖК Ленская, квартиры в Перми, новостройки Пермь, премиальное жилье, жилой комплекс">
+    <meta property="og:title" content="ЖК «Ленская» — Премиальный жилой комплекс в Перми">
+    <meta property="og:description" content="Премиальный жилой комплекс бизнес-класса на правом берегу Камы">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:url" content="https://lenskaya.ru">
+    <meta property="og:site_name" content="ЖК «Ленская»">
+    <meta property="og:image" content="/og-image.jpg">
+    <link rel="canonical" href="https://lenskaya.ru">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --color-graphite: #1a1a2e;
+            --color-primary-50: #f8f9fa;
+            --color-primary-100: #e9ecef;
+            --color-primary-200: #dee2e6;
+            --color-primary-300: #ced4da;
+            --color-primary-400: #adb5bd;
+            --color-primary-500: #6c757d;
+            --color-primary-600: #495057;
+            --color-primary-700: #343a40;
+            --color-primary-800: #212529;
+            --color-primary-900: #16192b;
+            --color-accent-50: #e8f4fc;
+            --color-accent-100: #d4e6f1;
+            --color-accent-400: #5dade2;
+            --color-accent-500: #3498db;
+            --color-accent-600: #2980b9;
+            --color-accent-700: #1f6fa5;
+            --color-milk: #f5f5f0;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-display: 'Playfair Display', Georgia, serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-milk);
+            color: var(--color-graphite);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container-custom {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .container-custom {
+                padding: 0 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container-custom {
+                padding: 0 2rem;
+            }
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 40;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--color-accent-600);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .nav {
+            display: none;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .nav {
+                display: flex;
+            }
+        }
+
+        .nav a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav a:hover {
+            color: white;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            font-size: 0.875rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--color-accent-600);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--color-accent-700);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-lg {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--color-accent-600);
+        }
+
+        .btn-white:hover {
+            background: var(--color-primary-50);
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 0;
+        }
+
+        @media (min-width: 768px) {
+            section {
+                padding: 8rem 0;
+            }
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--color-graphite);
+        }
+
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 3rem;
+            }
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--color-primary-600);
+            max-width: 640px;
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--color-graphite), var(--color-primary-900));
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0.2;
+            background: linear-gradient(to bottom, transparent, rgba(26, 26, 46, 0.8));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            color: white;
+            padding: 0 1rem;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hero h1 {
+                font-size: 6rem;
+            }
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--color-accent-100);
+            margin-bottom: 2rem;
+            max-width: 48rem;
+            margin-left: auto;
+            margin-right: auto;
+            animation: slideUp 0.8s ease-out 0.2s both;
+        }
+
+        @media (min-width: 768px) {
+            .hero p {
+                font-size: 1.5rem;
+            }
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: center;
+            animation: slideUp 0.8s ease-out 0.4s both;
+        }
+
+        @media (min-width: 640px) {
+            .hero-buttons {
+                flex-direction: row;
+            }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: white;
+        }
+
+        /* Manifest */
+        .manifest {
+            background: white;
+        }
+
+        .manifest-content {
+            max-width: 56rem;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .manifest-text {
+            font-size: 1.125rem;
+            line-height: 1.75;
+            color: var(--color-primary-600);
+            margin-bottom: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .manifest-text {
+                font-size: 1.25rem;
+            }
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .feature-card {
+            text-align: center;
+        }
+
+        .feature-icon {
+            width: 4rem;
+            height: 4rem;
+            background: var(--color-accent-100);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .feature-icon svg {
+            width: 2rem;
+            height: 2rem;
+            color: var(--color-accent-600);
+        }
+
+        .feature-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            color: var(--color-primary-600);
+        }
+
+        /* Master Plan */
+        .masterplan {
+            background: var(--color-primary-50);
+        }
+
+        .masterplan-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .masterplan-placeholder {
+            aspect-ratio: 16/9;
+            background: var(--color-primary-100);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-primary-500);
+            font-size: 1.125rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .stat-value {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-accent-600);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--color-primary-600);
+        }
+
+        /* Location */
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media (min-width: 1024px) {
+            .location-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .location-text {
+            font-size: 1.125rem;
+            color: var(--color-primary-600);
+            margin-bottom: 2rem;
+        }
+
+        .location-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .location-feature {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .location-feature-icon {
+            width: 3rem;
+            height: 3rem;
+            background: var(--color-accent-100);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .location-feature-icon svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: var(--color-accent-600);
+        }
+
+        .location-feature-text .time {
+            font-weight: 500;
+        }
+
+        .location-feature-text .desc {
+            font-size: 0.875rem;
+            color: var(--color-primary-500);
+        }
+
+        .map-placeholder {
+            height: 384px;
+            background: var(--color-primary-100);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-primary-500);
+        }
+
+        /* Architecture */
+        .architecture {
+            background: var(--color-graphite);
+            color: white;
+        }
+
+        .architecture .section-title {
+            color: white;
+        }
+
+        .architecture .section-subtitle {
+            color: var(--color-primary-300);
+        }
+
+        .arch-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .arch-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .arch-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .arch-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .arch-card p {
+            color: var(--color-primary-300);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .arch-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .arch-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .arch-features svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            color: var(--color-accent-400);
+            flex-shrink: 0;
+        }
+
+        /* Infrastructure */
+        .infra-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .infra-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .infra-card {
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            background: var(--color-primary-50);
+            transition: background 0.2s;
+        }
+
+        .infra-card:hover {
+            background: var(--color-accent-100);
+        }
+
+        .infra-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .infra-card h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .infra-card p {
+            font-size: 0.875rem;
+            color: var(--color-primary-600);
+        }
+
+        /* Apartments */
+        .apartments {
+            background: var(--color-primary-50);
+        }
+
+        .apartments-header {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .apartments-header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+        }
+
+        .apartments-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .apartments-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .apartments-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .apartment-card {
+            background: white;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.2s;
+        }
+
+        .apartment-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .apartment-image {
+            aspect-ratio: 4/3;
+            background: var(--color-primary-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-primary-400);
+        }
+
+        .apartment-info {
+            padding: 1.25rem;
+        }
+
+        .apartment-title {
+            font-family: var(--font-display);
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .apartment-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.875rem;
+            color: var(--color-primary-500);
+            margin-bottom: 0.75rem;
+        }
+
+        .apartment-price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-accent-600);
+        }
+
+        /* Progress */
+        .progress-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .progress-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .progress-card {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .progress-header h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .progress-percent {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-accent-600);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 0.75rem;
+            background: var(--color-primary-100);
+            border-radius: 9999px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--color-accent-600);
+            border-radius: 9999px;
+            transition: width 0.5s;
+        }
+
+        .progress-status {
+            color: var(--color-primary-600);
+        }
+
+        /* Gallery */
+        .gallery {
+            background: var(--color-primary-50);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            background: var(--color-primary-200);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-primary-400);
+        }
+
+        .gallery-item:hover {
+            opacity: 0.9;
+        }
+
+        /* News */
+        .news-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .news-link {
+            color: var(--color-accent-600);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .news-link:hover {
+            color: var(--color-accent-700);
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .news-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.2s;
+        }
+
+        .news-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .news-date {
+            font-size: 0.875rem;
+            color: var(--color-primary-500);
+        }
+
+        .news-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .news-excerpt {
+            color: var(--color-primary-600);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .news-read-more {
+            color: var(--color-accent-600);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .news-read-more:hover {
+            color: var(--color-accent-700);
+        }
+
+        /* CTA */
+        .cta {
+            background: var(--color-accent-600);
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-family: var(--font-display);
+            font-size: 2.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .cta h2 {
+                font-size: 3rem;
+            }
+        }
+
+        .cta p {
+            font-size: 1.25rem;
+            color: var(--color-accent-100);
+            margin-bottom: 2rem;
+            max-width: 40rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        @media (min-width: 640px) {
+            .cta-buttons {
+                flex-direction: row;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--color-graphite);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 2fr 1fr 1fr 1fr;
+            }
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--color-accent-600);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .footer-logo-text {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .footer-desc {
+            color: var(--color-primary-400);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-title {
+            font-family: var(--font-display);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--color-primary-400);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        .footer-copyright {
+            color: var(--color-primary-400);
+            font-size: 0.875rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            width: 2.5rem;
+            height: 2.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .footer-social a:hover {
+            background: var(--color-accent-600);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 53%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40%, 43% {
+                transform: translateX(-50%) translateY(-20px);
+            }
+            70% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            90% {
+                transform: translateX(-50%) translateY(-4px);
+            }
+        }
+
+        /* Mobile menu */
+        .mobile-menu-btn {
+            display: flex;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+
+        .mobile-menu-btn svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        /* Intro Splash */
+        .intro-splash {
+            position: fixed;
+            inset: 0;
+            background: var(--color-graphite);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .intro-splash.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .intro-splash-content {
+            text-align: center;
+            color: white;
+        }
+
+        .intro-logo {
+            width: 80px;
+            height: 80px;
+            background: var(--color-accent-600);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+        }
+
+        .intro-logo span {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .intro-progress {
+            width: 256px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 9999px;
+            height: 8px;
+            margin: 2rem auto 0;
+            overflow: hidden;
+        }
+
+        .intro-progress-bar {
+            height: 100%;
+            background: var(--color-accent-500);
+            border-radius: 9999px;
+            transition: width 0.1s linear;
+            width: 0%;
+        }
+
+        .intro-skip {
+            margin-top: 2rem;
+            color: var(--color-primary-400);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .intro-skip:hover {
+            color: white;
+        }
+
+        /* Header scroll effect */
+        .header.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .header.scrolled .logo,
+        .header.scrolled .nav a,
+        .header.scrolled .mobile-menu-btn {
+            color: var(--color-graphite);
+        }
+
+        .header.scrolled .nav a:hover {
+            color: var(--color-accent-600);
+        }
+
+        .header.scrolled .btn-secondary {
+            border-color: var(--color-graphite);
+            color: var(--color-graphite);
+        }
+
+        .header.scrolled .btn-secondary:hover {
+            background: var(--color-primary-50);
+        }
+
+        /* Favorites button */
+        .favorites-btn {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            color: white;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .header.scrolled .favorites-btn {
+            color: var(--color-graphite);
+        }
+
+        .favorites-btn:hover {
+            color: var(--color-accent-400);
+        }
+
+        .favorites-btn svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .favorites-count {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            width: 20px;
+            height: 20px;
+            background: #cd7f32;
+            color: white;
+            font-size: 0.75rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        /* Phone link */
+        .phone-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .header.scrolled .phone-link {
+            color: var(--color-graphite);
+        }
+
+        .phone-link:hover {
+            color: var(--color-accent-400);
+        }
+
+        .phone-link svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .phone-link span {
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 767px) {
+            .phone-link {
+                display: none;
+            }
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            background: white;
+            border-top: 1px solid var(--color-primary-100);
+            padding: 1rem 0;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu nav {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--color-primary-700);
+            text-decoration: none;
+            border-radius: 0.5rem;
+            transition: all 0.2s;
+        }
+
+        .mobile-menu a:hover,
+        .mobile-menu a.active {
+            background: var(--color-accent-50);
+            color: var(--color-accent-600);
+        }
+
+        .mobile-menu .mobile-cta {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--color-primary-100);
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 60;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            max-width: 480px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: translateY(20px);
+            transition: transform 0.3s;
+        }
+
+        .modal-overlay.active .modal {
+            transform: translateY(0);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-header h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--color-primary-500);
+            padding: 4px;
+        }
+
+        .modal-close:hover {
+            color: var(--color-graphite);
+        }
+
+        .modal-close svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--color-primary-700);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--color-primary-200);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-family: var(--font-sans);
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-accent-500);
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        /* Logo text update */
+        .logo-text-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .logo-subtitle {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: -2px;
+        }
+
+        .header.scrolled .logo-subtitle {
+            color: var(--color-primary-500);
+        }
+
+        /* Map container */
+        .map-container {
+            height: 384px;
+            background: var(--color-primary-100);
+            border-radius: 1rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer updates */
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            color: var(--color-primary-300);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-contact-item:hover {
+            color: white;
+        }
+
+        .footer-contact-item svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .footer-contact-item span {
+            font-size: 0.875rem;
+        }
+
+        .footer-social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .footer-social-link:hover {
+            background: var(--color-accent-600);
+        }
+
+        .footer-social-link svg {
+            width: 20px;
+            height: 20px;
+            color: white;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-bottom-links a {
+            color: var(--color-primary-400);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .footer-bottom-links a:hover {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Intro Splash -->
+    <div class="intro-splash" id="introSplash">
+        <div class="intro-splash-content">
+            <div class="intro-logo">
+                <span>Л</span>
+            </div>
+            <h1 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem;">ЖК «Ленская»</h1>
+            <p style="color: var(--color-primary-300);">Премиальный жилой комплекс</p>
+            <div class="intro-progress">
+                <div class="intro-progress-bar" id="introProgress"></div>
+            </div>
+            <button class="intro-skip" id="introSkip">Пропустить</button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container-custom">
+            <div class="header-inner">
+                <a href="/" class="logo">
+                    <div class="logo-icon">Л</div>
+                    <div class="logo-text-container">
+                        <span class="logo-text">Ленская</span>
+                        <span class="logo-subtitle">Премиальный ЖК</span>
+                    </div>
+                </a>
+                <nav class="nav">
+                    <a href="about.html">О проекте</a>
+                    <a href="catalog.html">Квартиры</a>
+                    <a href="architecture.html">Архитектура</a>
+                    <a href="improvement.html">Благоустройство</a>
+                    <a href="location.html">Расположение</a>
+                    <a href="gallery.html">Галерея</a>
+                    <a href="progress.html">Ход проекта</a>
+                    <a href="news.html">Новости</a>
+                    <a href="contacts.html">Контакты</a>
+                </nav>
+                <div class="header-actions">
+                    <!-- Favorites -->
+                    <a href="favorites.html" class="favorites-btn" title="Избранное">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                        <span class="favorites-count" id="favoritesCount" style="display: none;">0</span>
+                    </a>
+                    <!-- CTA Button -->
+                    <button class="btn btn-primary" id="consultationBtn">Записаться</button>
+                    <!-- Phone -->
+                    <a href="tel:+73421234567" class="phone-link">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                        </svg>
+                        <span>+7 (342) 123-45-67</span>
+                    </a>
+                    <!-- Mobile Menu Button -->
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" id="menuIcon">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <nav>
+                    <a href="about.html">О проекте</a>
+                    <a href="catalog.html">Квартиры</a>
+                    <a href="architecture.html">Архитектура</a>
+                    <a href="improvement.html">Благоустройство</a>
+                    <a href="location.html">Расположение</a>
+                    <a href="gallery.html">Галерея</a>
+                    <a href="progress.html">Ход проекта</a>
+                    <a href="news.html">Новости</a>
+                    <a href="contacts.html">Контакты</a>
+                    <div class="mobile-cta">
+                        <button class="btn btn-primary" style="width: 100%;" id="mobileConsultationBtn">Записаться на просмотр</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Consultation Modal -->
+    <div class="modal-overlay" id="consultationModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Записаться на просмотр</h3>
+                <button class="modal-close" id="modalClose">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <form id="consultationForm">
+                <div class="form-group">
+                    <label for="name">Ваше имя</label>
+                    <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+7 (___) ___-__-__">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email (необязательно)</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">Сообщение (необязательно)</label>
+                    <textarea id="message" name="message" placeholder="Расскажите, что вас интересует"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>ЖК «Ленская»</h1>
+                <p>Премиальный жилой комплекс бизнес-класса на правом берегу Камы</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-lg" id="heroConsultationBtn">Записаться на просмотр</button>
+                    <a href="catalog.html" class="btn btn-secondary btn-lg">Выбрать квартиру</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Manifest Section -->
+        <section class="manifest" id="manifest">
+            <div class="container-custom">
+                <div class="manifest-content">
+                    <h2 class="section-title" style="text-align: center;">Манифест</h2>
+                    <p class="manifest-text">
+                        «Ленская» — это больше, чем жилой комплекс. Это философия жизни, где каждый деталь 
+                        продумана для вашего комфорта. Мы создаем пространство, где современная архитектура 
+                        гармонично сочетается с природой, а премиальное качество становится частью повседневной жизни.
+                    </p>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                </svg>
+                            </div>
+                            <h3>Архитектура</h3>
+                            <p>Современный дизайн с использованием премиальных материалов</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                                </svg>
+                            </div>
+                            <h3>Благоустройство</h3>
+                            <p>Озелененная территория с зонами отдыха и детскими площадками</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                            <h3>Расположение</h3>
+                            <p>Удобная транспортная доступность и развитая инфраструктура</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Master Plan Section -->
+        <section class="masterplan">
+            <div class="container-custom">
+                <div style="text-align: center; margin-bottom: 4rem;">
+                    <h2 class="section-title">Генплан</h2>
+                    <p class="section-subtitle" style="margin: 0 auto;">
+                        Территория комплекса спроектирована с учетом максимального комфорта для жителей
+                    </p>
+                </div>
+                <div class="masterplan-card">
+                    <div class="masterplan-placeholder">
+                        Интерактивный генплан
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value">5</div>
+                            <div class="stat-label">Корпусов</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">709</div>
+                            <div class="stat-label">Квартир</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">25-120</div>
+                            <div class="stat-label">м² площадь</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">2,5</div>
+                            <div class="stat-label">Гектара территория</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section class="location" id="location" style="background: white;">
+            <div class="container-custom">
+                <div class="location-grid">
+                    <div>
+                        <h2 class="section-title">Расположение</h2>
+                        <p class="location-text">
+                            ЖК «Ленская» расположен в престижном районе Перми на правом берегу Камы. 
+                            Рядом — набережная, парки, школы, детские сады и торговые центры.
+                        </p>
+                        <div class="location-features">
+                            <div class="location-feature">
+                                <div class="location-feature-icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                                    </svg>
+                                </div>
+                                <div class="location-feature-text">
+                                    <div class="time">5 минут</div>
+                                    <div class="desc">до набережной Камы</div>
+                                </div>
+                            </div>
+                            <div class="location-feature">
+                                <div class="location-feature-icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                    </svg>
+                                </div>
+                                <div class="location-feature-text">
+                                    <div class="time">10 минут</div>
+                                    <div class="desc">до школ и детских садов</div>
+                                </div>
+                            </div>
+                            <div class="location-feature">
+                                <div class="location-feature-icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"></path>
+                                    </svg>
+                                </div>
+                                <div class="location-feature-text">
+                                    <div class="time">15 минут</div>
+                                    <div class="desc">до торговых центров</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-container">
+                        <div id="map" style="width: 100%; height: 100%; background: var(--color-primary-100); display: flex; align-items: center; justify-content: center; color: var(--color-primary-500);">
+                            <div style="text-align: center;">
+                                <svg style="width: 48px; height: 48px; margin: 0 auto 1rem; color: var(--color-primary-400);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                <p>г. Пермь, ул. Ленская, 1</p>
+                                <p style="font-size: 0.875rem; margin-top: 0.5rem;">58.0105, 56.2502</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Architecture Section -->
+        <section class="architecture" id="architecture">
+            <div class="container-custom">
+                <div style="text-align: center; margin-bottom: 4rem;">
+                    <h2 class="section-title">Архитектура</h2>
+                    <p class="section-subtitle" style="margin: 0 auto;">
+                        Современная архитектура с использованием премиальных материалов и инновационных решений
+                    </p>
+                </div>
+                <div class="arch-grid">
+                    <div class="arch-card">
+                        <h3>Фасады</h3>
+                        <p>
+                            Вентилируемые фасады с использованием натурального камня и композитных панелей. 
+                            Панорамное остекление с энергосберегающими стеклопакетами.
+                        </p>
+                        <ul class="arch-features">
+                            <li>
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Натуральный камень</span>
+                            </li>
+                            <li>
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Панорамное остекление</span>
+                            </li>
+                            <li>
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Энергоэффективность класса A</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="arch-card">
+                        <h3>Планировки</h3>
+                        <p>
+                            Эргономичные планировки с высокими потолками 3,1 м. 
+                            Умные решения для хранения и зонирования пространства.
+                        </p>
+                        <ul class="arch-features">
+                            <li>
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Потолки 3,1 м</span>
+                            </li>
+                            <li>
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Панорамные окна</span>
+                            </li>
+                            <li>
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Свободная планировка</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Infrastructure Section -->
+        <section class="infrastructure" id="infrastructure" style="background: white;">
+            <div class="container-custom">
+                <div style="text-align: center; margin-bottom: 4rem;">
+                    <h2 class="section-title">Инфраструктура</h2>
+                    <p class="section-subtitle" style="margin: 0 auto;">
+                        Все необходимое для комфортной жизни в шаговой доступности
+                    </p>
+                </div>
+                <div class="infra-grid">
+                    <div class="infra-card">
+                        <div class="icon">🏥</div>
+                        <h3>Медицина</h3>
+                        <p>Поликлиника и аптеки</p>
+                    </div>
+                    <div class="infra-card">
+                        <div class="icon">🏫</div>
+                        <h3>Образование</h3>
+                        <p>Школы и детские сады</p>
+                    </div>
+                    <div class="infra-card">
+                        <div class="icon">🛒</div>
+                        <h3>Торговля</h3>
+                        <p>Торговые центры и магазины</p>
+                    </div>
+                    <div class="infra-card">
+                        <div class="icon">🌳</div>
+                        <h3>Отдых</h3>
+                        <p>Парки и набережная</p>
+                    </div>
+                    <div class="infra-card">
+                        <div class="icon">🏋️</div>
+                        <h3>Спорт</h3>
+                        <p>Фитнес-центры и стадионы</p>
+                    </div>
+                    <div class="infra-card">
+                        <div class="icon">🍽️</div>
+                        <h3>Рестораны</h3>
+                        <p>Кафе и рестораны</p>
+                    </div>
+                    <div class="infra-card">
+                        <div class="icon">🚌</div>
+                        <h3>Транспорт</h3>
+                        <p>Остановки и метро</p>
+                    </div>
+                    <div class="infra-card">
+                        <div class="icon">🎭</div>
+                        <h3>Культура</h3>
+                        <p>Театры и музеи</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Apartments Section -->
+        <section class="apartments" id="apartments">
+            <div class="container-custom">
+                <div class="apartments-header">
+                    <div>
+                        <h2 class="section-title" style="margin-bottom: 0.5rem;">Квартиры</h2>
+                        <p style="font-size: 1.125rem; color: var(--color-primary-600);">Выберите идеальную квартиру для вашей семьи</p>
+                    </div>
+                    <a href="catalog.html" class="btn btn-secondary" style="border-color: var(--color-graphite); color: var(--color-graphite);">Смотреть все квартиры</a>
+                </div>
+                <div class="apartments-grid">
+                    <div class="apartment-card">
+                        <div class="apartment-image">Студия 25 м²</div>
+                        <div class="apartment-info">
+                            <h3 class="apartment-title">Студия</h3>
+                            <div class="apartment-meta">
+                                <span>25 м²</span>
+                                <span>1 комнат</span>
+                            </div>
+                            <div class="apartment-price">от 3 500 000 ₽</div>
+                        </div>
+                    </div>
+                    <div class="apartment-card">
+                        <div class="apartment-image">1-комнатная 45 м²</div>
+                        <div class="apartment-info">
+                            <h3 class="apartment-title">1-комнатная</h3>
+                            <div class="apartment-meta">
+                                <span>45 м²</span>
+                                <span>1 комнат</span>
+                            </div>
+                            <div class="apartment-price">от 5 200 000 ₽</div>
+                        </div>
+                    </div>
+                    <div class="apartment-card">
+                        <div class="apartment-image">2-комнатная 70 м²</div>
+                        <div class="apartment-info">
+                            <h3 class="apartment-title">2-комнатная</h3>
+                            <div class="apartment-meta">
+                                <span>70 м²</span>
+                                <span>2 комнат</span>
+                            </div>
+                            <div class="apartment-price">от 7 800 000 ₽</div>
+                        </div>
+                    </div>
+                    <div class="apartment-card">
+                        <div class="apartment-image">3-комнатная 95 м²</div>
+                        <div class="apartment-info">
+                            <h3 class="apartment-title">3-комнатная</h3>
+                            <div class="apartment-meta">
+                                <span>95 м²</span>
+                                <span>3 комнат</span>
+                            </div>
+                            <div class="apartment-price">от 10 500 000 ₽</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Progress Section -->
+        <section class="progress" id="progress" style="background: white;">
+            <div class="container-custom">
+                <div style="text-align: center; margin-bottom: 4rem;">
+                    <h2 class="section-title">Ход строительства</h2>
+                    <p class="section-subtitle" style="margin: 0 auto;">
+                        Следите за прогрессом строительства в режиме реального времени
+                    </p>
+                </div>
+                <div class="progress-grid">
+                    <div class="progress-card">
+                        <div class="progress-header">
+                            <h3>Корпус 1</h3>
+                            <span class="progress-percent">75%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 75%;"></div>
+                        </div>
+                        <p class="progress-status">Отделка фасада</p>
+                    </div>
+                    <div class="progress-card">
+                        <div class="progress-header">
+                            <h3>Корпус 2</h3>
+                            <span class="progress-percent">45%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 45%;"></div>
+                        </div>
+                        <p class="progress-status">Возведение стен</p>
+                    </div>
+                    <div class="progress-card">
+                        <div class="progress-header">
+                            <h3>Корпус 3</h3>
+                            <span class="progress-percent">20%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 20%;"></div>
+                        </div>
+                        <p class="progress-status">Фундамент</p>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="progress.html" class="btn btn-primary">Подробнее о ходе строительства</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery" id="gallery">
+            <div class="container-custom">
+                <div style="text-align: center; margin-bottom: 4rem;">
+                    <h2 class="section-title">Галерея</h2>
+                    <p class="section-subtitle" style="margin: 0 auto;">
+                        Визуализации и фотографии жилого комплекса
+                    </p>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">Фото 1</div>
+                    <div class="gallery-item">Фото 2</div>
+                    <div class="gallery-item">Фото 3</div>
+                    <div class="gallery-item">Фото 4</div>
+                    <div class="gallery-item">Фото 5</div>
+                    <div class="gallery-item">Фото 6</div>
+                    <div class="gallery-item">Фото 7</div>
+                    <div class="gallery-item">Фото 8</div>
+                </div>
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="gallery.html" class="btn btn-secondary" style="border-color: var(--color-graphite); color: var(--color-graphite);">Смотреть все фото</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section class="news" id="news" style="background: white;">
+            <div class="container-custom">
+                <div class="news-header">
+                    <h2 class="section-title" style="margin-bottom: 0;">Новости</h2>
+                    <a href="news.html" class="news-link">Все новости →</a>
+                </div>
+                <div class="news-grid">
+                    <article class="news-card">
+                        <time class="news-date">15 декабря 2024</time>
+                        <h3 class="news-title">Старт продаж корпуса 3</h3>
+                        <p class="news-excerpt">Открыты бронирования квартир в третьем корпусе жилого комплекса</p>
+                        <a href="news.html" class="news-read-more">Читать далее →</a>
+                    </article>
+                    <article class="news-card">
+                        <time class="news-date">10 декабря 2024</time>
+                        <h3 class="news-title">Завершение отделки лобби</h3>
+                        <p class="news-excerpt">Завершены работы по отделке общественных зон первого корпуса</p>
+                        <a href="news.html" class="news-read-more">Читать далее →</a>
+                    </article>
+                    <article class="news-card">
+                        <time class="news-date">5 декабря 2024</time>
+                        <h3 class="news-title">Благоустройство территории</h3>
+                        <p class="news-excerpt">Начаты работы по озеленению и благоустройству двора</p>
+                        <a href="news.html" class="news-read-more">Читать далее →</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container-custom">
+                <h2>Готовы выбрать квартиру мечты?</h2>
+                <p>Запишитесь на бесплатную консультацию и получите индивидуальное предложение</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-white btn-lg" id="ctaConsultationBtn">Записаться на консультацию</button>
+                    <a href="catalog.html" class="btn btn-secondary btn-lg">Выбрать квартиру</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="contacts">
+        <div class="container-custom">
+            <div class="footer-grid">
+                <!-- Brand Column -->
+                <div>
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">Л</div>
+                        <div class="logo-text-container">
+                            <span class="footer-logo-text">Ленская</span>
+                            <span class="logo-subtitle" style="color: var(--color-primary-400);">Премиальный ЖК</span>
+                        </div>
+                    </div>
+                    <p class="footer-desc">
+                        Премиальный жилой комплекс бизнес-класса на правом берегу Камы в Перми. 
+                        Современная архитектура, благоустроенная территория и развитая инфраструктура.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://t.me/lenskaya" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Telegram">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.692-1.653-1.123-2.678-1.799-1.185-.78-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.492-1.302.487-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                            </svg>
+                        </a>
+                        <a href="https://vk.com/lenskaya" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="VK">
+                            <svg fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 13.222c.478.464.988.907 1.39 1.449.18.24.348.491.425.788.112.44-.199.625-.558.643h-1.942c-.482.044-.864-.154-1.195-.444-.262-.232-.507-.484-.76-.726-.104-.1-.213-.195-.339-.26-.243-.127-.452-.078-.584.164-.134.248-.163.523-.179.802-.024.422-.154.533-.577.557-1.05.06-2.04-.112-2.93-.67-1.013-.637-1.79-1.5-2.46-2.49-1.278-1.887-2.24-3.95-3.07-6.08-.194-.496-.06-.756.477-.77.556-.014 1.112-.014 1.668 0 .432.008.62.218.754.644.56 1.767 1.302 3.45 2.224 5.034.24.408.48.824.844 1.134.365.31.645.208.832-.228.096-.224.136-.46.156-.7.066-.794.07-1.589-.046-2.38-.062-.42-.292-.698-.707-.79-.213-.048-.182-.125-.078-.22.19-.174.387-.283.765-.283h1.82c.284.056.35.188.388.472l.002 2.016c-.005.135.068.537.312.625.196.064.325-.093.44-.224.33-.376.568-.81.78-1.256.374-.792.658-1.627.924-2.478.11-.351.278-.518.668-.513.39.005.78.003 1.17.003.424.006.64.176.724.6.168.85.172 1.707.006 2.56-.12.613-.362 1.18-.63 1.732-.218.447-.452.885-.682 1.326-.2.382-.186.567.15.857z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- About Column -->
+                <div>
+                    <h4 class="footer-title">О проекте</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">О комплексе</a></li>
+                        <li><a href="architecture.html">Архитектура</a></li>
+                        <li><a href="improvement.html">Благоустройство</a></li>
+                        <li><a href="location.html">Расположение</a></li>
+                    </ul>
+                </div>
+
+                <!-- Apartments Column -->
+                <div>
+                    <h4 class="footer-title">Квартиры</h4>
+                    <ul class="footer-links">
+                        <li><a href="catalog.html">Каталог квартир</a></li>
+                        <li><a href="progress.html">Ход проекта</a></li>
+                        <li><a href="gallery.html">Галерея</a></li>
+                    </ul>
+                </div>
+
+                <!-- Info Column -->
+                <div>
+                    <h4 class="footer-title">Информация</h4>
+                    <ul class="footer-links">
+                        <li><a href="news.html">Новости</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Column -->
+                <div>
+                    <h4 class="footer-title">Контакты</h4>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <a href="tel:+73421234567" class="footer-contact-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <span>+7 (342) 123-45-67</span>
+                        </a>
+                        <a href="mailto:info@lenskaya.ru" class="footer-contact-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <span>info@lenskaya.ru</span>
+                        </a>
+                        <div class="footer-contact-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span>г. Пермь, ул. Ленская, 1</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span>Пн-Вс: 9:00 - 21:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2024 ЖК «Ленская». Все права защищены.</p>
+                <div class="footer-bottom-links">
+                    <a href="/privacy">Политика конфиденциальности</a>
+                    <a href="/terms">Условия использования</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="common.js"></script>
+    <script>
+        // Intro Splash (homepage only)
+        const introSplash = document.getElementById('introSplash');
+        const introProgress = document.getElementById('introProgress');
+        const introSkip = document.getElementById('introSkip');
+        let progress = 0;
+        let introInterval;
+
+        function startIntro() {
+            introInterval = setInterval(() => {
+                progress += 2;
+                introProgress.style.width = progress + '%';
+                if (progress >= 100) {
+                    clearInterval(introInterval);
+                    hideIntro();
+                }
+            }, 100);
+        }
+
+        function hideIntro() {
+            introSplash.classList.add('hidden');
+            setTimeout(() => {
+                introSplash.style.display = 'none';
+            }, 500);
+        }
+
+        introSkip.addEventListener('click', () => {
+            clearInterval(introInterval);
+            hideIntro();
+        });
+
+        startIntro();
+
+        // Hero Button (homepage only)
+        const heroConsultationBtn = document.getElementById('heroConsultationBtn');
+        if (heroConsultationBtn) {
+            heroConsultationBtn.addEventListener('click', openModal);
+        }
+
+        // CTA Button (homepage only)
+        const ctaConsultationBtn = document.getElementById('ctaConsultationBtn');
+        if (ctaConsultationBtn) {
+            ctaConsultationBtn.addEventListener('click', openModal);
+        }
+    </script>
+</body>
+</html>
