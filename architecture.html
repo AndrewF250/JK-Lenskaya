@@ -3,12 +3,346 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Архитектура — ЖК «Ленская»</title>
-    <meta name="description" content="Современная архитектура ЖК «Ленская»: вентилируемые фасады с натуральным камнем, панорамное остекление, энергоэффективность класса А.">
+    <title>Архитектура — ЖК «Пермь Резиденс»</title>
+    <meta name="description" content="Архитектура ЖК «Пермь Резиденс»: террасный силуэт, премиальные материалы, панорамные виды на Каму.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --color-graphite: #2C4A3E;
+            --color-primary-50: #F8F5F0;
+            --color-primary-100: #EDE6DA;
+            --color-primary-200: #D9CEBC;
+            --color-primary-300: #B8A994;
+            --color-primary-400: #9A8B75;
+            --color-primary-500: #7A6E5E;
+            --color-primary-600: #5C5045;
+            --color-primary-700: #3E352B;
+            --color-primary-800: #2A241D;
+            --color-primary-900: #1F3B2F;
+            --color-accent-50: #F5EDE0;
+            --color-accent-100: #E8D9C2;
+            --color-accent-400: #D4B88C;
+            --color-accent-500: #C4A57B;
+            --color-accent-600: #B8945E;
+            --color-accent-700: #9A7A4A;
+            --color-milk: #F2E8D9;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-display: 'Playfair Display', Georgia, serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-milk);
+            color: var(--color-graphite);
+            -webkit-font-smoothing: antialiased;
+        }
+        .container-custom {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        @media (min-width: 640px) { .container-custom { padding: 0 1.5rem; } }
+        @media (min-width: 1024px) { .container-custom { padding: 0 2rem; } }
+
+        /* Header */
+        .header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 40;
+            background: rgba(44, 74, 62, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .header.scrolled {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .header.scrolled .logo, .header.scrolled .nav a, .header.scrolled .mobile-menu-btn { color: var(--color-graphite); }
+        .header.scrolled .nav a:hover { color: var(--color-accent-500); }
+        .header.scrolled .logo-subtitle { color: var(--color-primary-500); }
+        .header.scrolled .favorites-btn { color: var(--color-graphite); }
+        .header.scrolled .phone-link { color: var(--color-graphite); }
+        .header-inner {
+            display: flex; align-items: center; justify-content: space-between; height: 80px;
+        }
+        .logo {
+            display: flex; align-items: center; gap: 12px; text-decoration: none; color: white; flex-shrink: 0;
+        }
+        .logo-text-container { display: flex; align-items: center; }
+        .logo-text {
+            font-family: var(--font-display); font-size: 1.125rem; font-weight: 600;
+            letter-spacing: 2px; text-transform: uppercase;
+        }
+        .logo-divider { color: var(--color-primary-300); margin: 0 0.5rem; font-weight: 300; }
+        .logo-subtitle {
+            font-size: 0.625rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6);
+        }
+        .nav {
+            display: none; gap: 0.75rem; flex-shrink: 1; min-width: 0; overflow: hidden;
+        }
+        @media (min-width: 1024px) { .nav { display: flex; } }
+        @media (min-width: 1280px) { .nav { gap: 1.5rem; } .nav a { font-size: 0.875rem; } }
+        .nav a {
+            color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.75rem; font-weight: 500;
+            white-space: nowrap; transition: color 0.3s, transform 0.3s; position: relative;
+        }
+        .nav a::after {
+            content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+            background: var(--color-accent-500); transition: width 0.3s;
+        }
+        .nav a:hover::after, .nav a.active::after { width: 100%; }
+        .nav a:hover, .nav a.active { color: var(--color-accent-500); transform: translateY(-2px); }
+        .header-actions { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
+        @media (min-width: 1280px) { .header-actions { gap: 1rem; } }
+        .favorites-btn {
+            position: relative; display: flex; align-items: center; justify-content: center;
+            width: 40px; height: 40px; color: white; text-decoration: none; transition: transform 0.3s;
+        }
+        .favorites-btn:hover { transform: scale(1.15); }
+        .favorites-btn svg { width: 24px; height: 24px; }
+        .favorites-count {
+            position: absolute; top: -4px; right: -4px; width: 20px; height: 20px;
+            background: #cd7f32; color: white; font-size: 0.75rem; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-weight: 600;
+        }
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 0.75rem 1.5rem; border-radius: 50px; font-weight: 500; font-size: 0.875rem;
+            text-decoration: none; transition: all 0.3s; cursor: pointer; border: none;
+            text-transform: uppercase; letter-spacing: 0.05em;
+        }
+        .btn-primary {
+            background: var(--color-graphite); color: white; border: 1px solid var(--color-graphite);
+        }
+        .btn-primary:hover { background: var(--color-primary-900); border-color: var(--color-primary-900); }
+        .btn-secondary {
+            background: transparent; color: var(--color-accent-500); border: 1px solid var(--color-accent-500);
+        }
+        .btn-secondary:hover { background: var(--color-accent-500); color: white; }
+        .btn-header {
+            padding: 0.5rem 1.25rem; font-size: 0.75rem; background: transparent;
+            color: var(--color-accent-500); border: 1px solid var(--color-accent-500);
+            border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s;
+        }
+        .btn-header:hover { background: var(--color-accent-500); color: white; }
+        .phone-link {
+            display: none; align-items: center; gap: 8px; color: white; text-decoration: none; transition: transform 0.3s;
+        }
+        @media (min-width: 768px) { .phone-link { display: flex; } }
+        .phone-link:hover { transform: translateY(-2px); }
+        .phone-link svg { width: 20px; height: 20px; }
+        .phone-link span { font-size: 0.875rem; font-weight: 500; display: none; }
+        @media (min-width: 1280px) { .phone-link span { display: inline; } }
+        .mobile-menu-btn {
+            display: flex; background: none; border: none; color: white; cursor: pointer; padding: 0.5rem;
+        }
+        @media (min-width: 1024px) { .mobile-menu-btn { display: none; } }
+        .mobile-menu-btn svg { width: 1.5rem; height: 1.5rem; }
+        .mobile-menu {
+            display: none; background: white; border-top: 1px solid var(--color-primary-100); padding: 1rem 0;
+        }
+        .mobile-menu.active { display: block; animation: mobile-menu-slide 0.3s ease-out; }
+        @keyframes mobile-menu-slide { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        .mobile-menu nav { display: flex; flex-direction: column; gap: 0.5rem; }
+        .mobile-menu a {
+            display: block; padding: 0.75rem 1rem; font-size: 1rem; font-weight: 500;
+            color: var(--color-primary-700); text-decoration: none; border-radius: 0.5rem; transition: all 0.2s;
+        }
+        .mobile-menu a:hover, .mobile-menu a.active { background: var(--color-accent-50); color: var(--color-accent-600); }
+        .mobile-menu .mobile-cta { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-primary-100); }
+
+        /* Architecture Page Styles */
+        .arch-hero {
+            position: relative; min-height: 70vh; display: flex; align-items: flex-end;
+            background: linear-gradient(135deg, #1a2a20, #2C4A3E, #1a2a20);
+            overflow: hidden; padding: 2rem 0 4rem;
+        }
+        .arch-hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(26,42,32,0.9) 0%, rgba(26,42,32,0.3) 50%, transparent 100%);
+        }
+        .arch-hero-content { position: relative; z-index: 10; }
+        .arch-breadcrumbs {
+            font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;
+            color: rgba(255,255,255,0.5); margin-bottom: 1.5rem;
+        }
+        .arch-breadcrumbs a { color: rgba(255,255,255,0.5); text-decoration: none; }
+        .arch-breadcrumbs a:hover { color: var(--color-accent-500); }
+        .arch-hero-title {
+            font-family: var(--font-display); font-size: 3rem; font-weight: 700;
+            color: white; line-height: 1.1; letter-spacing: 2px; text-transform: uppercase;
+        }
+        @media (min-width: 768px) { .arch-hero-title { font-size: 4.5rem; } }
+        .arch-hero-marker {
+            position: absolute; bottom: 2rem; right: 2rem; z-index: 10;
+            font-size: 0.75rem; color: rgba(255,255,255,0.3); letter-spacing: 1px;
+        }
+
+        /* Sidebar Navigation */
+        .arch-sidebar {
+            position: sticky; top: 100px; padding-right: 2rem;
+        }
+        .arch-sidebar-nav { display: flex; flex-direction: column; gap: 1.5rem; }
+        .arch-sidebar-link {
+            display: flex; align-items: baseline; gap: 0.75rem;
+            font-size: 0.75rem; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase;
+            color: var(--color-primary-400); text-decoration: none; transition: color 0.3s;
+        }
+        .arch-sidebar-link:hover, .arch-sidebar-link.active { color: var(--color-graphite); }
+        .arch-sidebar-link .num { font-weight: 600; color: var(--color-accent-500); min-width: 2rem; }
+
+        /* Content Sections */
+        .arch-section { padding: 5rem 0; }
+        .arch-section-header { margin-bottom: 3rem; }
+        .arch-accent-line {
+            width: 80px; height: 2px; background: var(--color-accent-500); margin-bottom: 1.5rem;
+        }
+        .arch-section-title {
+            font-family: var(--font-display); font-size: 2.5rem; font-weight: 600;
+            color: var(--color-graphite); line-height: 1.1; letter-spacing: 1px; text-transform: uppercase;
+        }
+        @media (min-width: 768px) { .arch-section-title { font-size: 3.5rem; } }
+
+        /* Two Column Layout */
+        .arch-two-col {
+            display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: start;
+        }
+        @media (min-width: 1024px) { .arch-two-col { grid-template-columns: 1.2fr 1fr; } }
+
+        /* Image Placeholders */
+        .arch-image-placeholder {
+            width: 100%; aspect-ratio: 4/3; background: var(--color-primary-100);
+            border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;
+            color: var(--color-primary-400); font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase;
+            border: 1px dashed var(--color-primary-200);
+        }
+        .arch-image-placeholder.large { aspect-ratio: 16/10; }
+        .arch-image-caption {
+            font-size: 0.75rem; color: var(--color-primary-400); margin-top: 0.5rem;
+            letter-spacing: 1px; text-transform: uppercase;
+        }
+
+        /* Technical Drawings */
+        .arch-drawings { display: flex; flex-direction: column; gap: 2rem; }
+        .arch-drawing {
+            background: var(--color-primary-50); border-radius: 0.5rem; padding: 1.5rem;
+            border: 1px solid var(--color-primary-200);
+        }
+        .arch-drawing-placeholder {
+            width: 100%; aspect-ratio: 16/9; background: white;
+            border-radius: 0.25rem; display: flex; align-items: center; justify-content: center;
+            color: var(--color-primary-400); font-size: 0.75rem; margin-bottom: 1rem;
+            border: 1px solid var(--color-primary-200);
+        }
+        .arch-drawing-text { font-size: 0.875rem; color: var(--color-primary-500); line-height: 1.6; }
+
+        /* Gallery Grid */
+        .arch-gallery { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+        @media (min-width: 768px) { .arch-gallery { grid-template-columns: repeat(3, 1fr); } }
+        .arch-gallery-item { display: flex; flex-direction: column; gap: 0.75rem; }
+        .arch-gallery-img {
+            width: 100%; aspect-ratio: 3/4; background: var(--color-primary-100);
+            border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;
+            color: var(--color-primary-400); font-size: 0.75rem; letter-spacing: 1px;
+            border: 1px dashed var(--color-primary-200);
+        }
+        .arch-gallery-caption { font-size: 0.75rem; color: var(--color-primary-500); line-height: 1.5; }
+
+        /* Advantages List */
+        .arch-advantages { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; }
+        .arch-advantage { display: flex; gap: 1rem; align-items: flex-start; }
+        .arch-advantage-icon {
+            width: 40px; height: 40px; background: var(--color-accent-50); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .arch-advantage-icon svg { width: 20px; height: 20px; color: var(--color-accent-600); }
+        .arch-advantage-text h4 {
+            font-weight: 600; margin-bottom: 0.25rem; color: var(--color-graphite);
+        }
+        .arch-advantage-text p { font-size: 0.875rem; color: var(--color-primary-500); }
+
+        /* CTA Button */
+        .arch-cta { text-align: center; padding: 4rem 0; }
+
+        /* Footer */
+        .footer {
+            background: var(--color-primary-50); color: var(--color-graphite); padding: 4rem 0 2rem;
+        }
+        .footer-nav {
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-bottom: 2rem;
+        }
+        .footer-nav a {
+            color: var(--color-graphite); text-decoration: none; font-size: 0.75rem; font-weight: 600;
+            letter-spacing: 1.5px; text-transform: uppercase; transition: color 0.3s;
+        }
+        .footer-nav a:hover { color: var(--color-accent-500); }
+        .footer-contact-info { text-align: center; margin-bottom: 2rem; }
+        .footer-contact-info p { font-size: 0.875rem; color: var(--color-primary-500); margin-bottom: 0.25rem; }
+        .footer .footer-social { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; }
+        .footer .footer-social-link {
+            width: 40px; height: 40px; background: rgba(0,0,0,0.05); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .footer .footer-social-link:hover { background: var(--color-accent-500); transform: translateY(-2px); }
+        .footer .footer-social-link svg { width: 18px; height: 18px; color: var(--color-graphite); }
+        .footer .footer-social-link:hover svg { color: white; }
+        .footer-bottom {
+            border-top: 1px solid var(--color-primary-200); padding-top: 2rem; text-align: center;
+        }
+        .footer-copyright {
+            font-size: 0.75rem; color: var(--color-primary-400); letter-spacing: 1px; text-transform: uppercase;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 60;
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; visibility: hidden; transition: all 0.3s;
+        }
+        .modal-overlay.active { opacity: 1; visibility: visible; }
+        .modal {
+            background: white; border-radius: 1rem; padding: 2rem; max-width: 480px;
+            width: 90%; max-height: 90vh; overflow-y: auto;
+            transform: translateY(20px); transition: transform 0.3s;
+        }
+        .modal-overlay.active .modal { transform: translateY(0); animation: modal-slide-up 0.4s ease-out; }
+        @keyframes modal-slide-up { from { opacity: 0; transform: translateY(30px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
+        .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+        .modal-header h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; }
+        .modal-close { background: none; border: none; cursor: pointer; color: var(--color-primary-500); padding: 4px; }
+        .modal-close:hover { color: var(--color-graphite); }
+        .modal-close svg { width: 24px; height: 24px; }
+        .form-group { margin-bottom: 1rem; }
+        .form-group label { display: block; font-size: 0.875rem; font-weight: 500; color: var(--color-primary-700); margin-bottom: 0.5rem; }
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--color-primary-200);
+            border-radius: 0.5rem; font-size: 1rem; font-family: var(--font-sans); transition: border-color 0.2s;
+        }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--color-accent-500); }
+        .form-group textarea { min-height: 100px; resize: vertical; }
+
+        /* Animations */
+        .animate-hidden { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1), transform 0.8s cubic-bezier(0.4,0,0.2,1); }
+        .animate-visible { opacity: 1; transform: translateY(0); }
+        @media (prefers-reduced-motion: reduce) { .animate-hidden { opacity: 1; transform: none; } }
+
+        /* Layout */
+        .arch-layout {
+            display: grid; grid-template-columns: 1fr; gap: 3rem;
+        }
+        @media (min-width: 1024px) {
+            .arch-layout { grid-template-columns: 200px 1fr; gap: 4rem; }
+            .arch-sidebar { display: block; }
+        }
+        @media (max-width: 1023px) {
+            .arch-sidebar { display: none; }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -16,22 +350,18 @@
         <div class="container-custom">
             <div class="header-inner">
                 <a href="index.html" class="logo">
-                    <div class="logo-icon">Л</div>
                     <div class="logo-text-container">
-                        <span class="logo-text">Ленская</span>
-                        <span class="logo-subtitle">Премиальный ЖК</span>
+                        <span class="logo-text">ПЕРМЬ РЕЗИДЕНС</span>
+                        <span class="logo-divider">|</span>
+                        <span class="logo-subtitle">БИЗНЕС-КЛАСС</span>
                     </div>
                 </a>
                 <nav class="nav">
-                    <a href="about.html">О проекте</a>
-                    <a href="catalog.html">Квартиры</a>
-                    <a href="architecture.html" class="active">Архитектура</a>
-                    <a href="improvement.html">Благоустройство</a>
-                    <a href="location.html">Расположение</a>
-                    <a href="gallery.html">Галерея</a>
-                    <a href="progress.html">Ход проекта</a>
-                    <a href="news.html">Новости</a>
-                    <a href="contacts.html">Контакты</a>
+                    <a href="about.html">ПРОЕКТ</a>
+                    <a href="architecture.html" class="active">АРХИТЕКТУРА</a>
+                    <a href="location.html">РАСПОЛОЖЕНИЕ</a>
+                    <a href="catalog.html">КВАРТИРЫ</a>
+                    <a href="gallery.html">ГАЛЕРЕЯ</a>
                 </nav>
                 <div class="header-actions">
                     <a href="favorites.html" class="favorites-btn" title="Избранное">
@@ -40,7 +370,7 @@
                         </svg>
                         <span class="favorites-count" id="favoritesCount" style="display: none;">0</span>
                     </a>
-                    <button class="btn btn-primary" id="consultationBtn">Записаться</button>
+                    <button class="btn btn-header" id="consultationBtn">КОНСУЛЬТАЦИЯ</button>
                     <a href="tel:+73421234567" class="phone-link">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
@@ -56,139 +386,223 @@
             </div>
             <div class="mobile-menu" id="mobileMenu">
                 <nav>
-                    <a href="about.html">О проекте</a>
-                    <a href="catalog.html">Квартиры</a>
-                    <a href="architecture.html" class="active">Архитектура</a>
-                    <a href="improvement.html">Благоустройство</a>
-                    <a href="location.html">Расположение</a>
-                    <a href="gallery.html">Галерея</a>
-                    <a href="progress.html">Ход проекта</a>
-                    <a href="news.html">Новости</a>
-                    <a href="contacts.html">Контакты</a>
+                    <a href="about.html">ПРОЕКТ</a>
+                    <a href="architecture.html" class="active">АРХИТЕКТУРА</a>
+                    <a href="location.html">РАСПОЛОЖЕНИЕ</a>
+                    <a href="catalog.html">КВАРТИРЫ</a>
+                    <a href="gallery.html">ГАЛЕРЕЯ</a>
                     <div class="mobile-cta">
-                        <button class="btn btn-primary" style="width: 100%;" id="mobileConsultationBtn">Записаться на просмотр</button>
+                        <button class="btn btn-primary" style="width: 100%;" id="mobileConsultationBtn">ЗАПИСАТЬСЯ НА ПРОСМОТР</button>
                     </div>
                 </nav>
             </div>
         </div>
     </header>
 
-    <!-- Page Content -->
-    <main class="page-content">
-        <section class="page-hero">
+    <main>
+        <!-- Hero Section -->
+        <section class="arch-hero">
             <div class="container-custom">
-                <h1 class="page-title">Архитектура</h1>
-                <p class="page-subtitle">Современный дизайн, премиальные материалы и продуманные решения</p>
+                <div class="arch-hero-content">
+                    <div class="arch-breadcrumbs">
+                        <a href="index.html">ГЛАВНАЯ</a> / АРХИТЕКТУРА
+                    </div>
+                    <h1 class="arch-hero-title">АРХИТЕКТУРА<br>ПЕРМЬ РЕЗИДЕНС.</h1>
+                </div>
             </div>
+            <div class="arch-hero-marker">[ARCH PAGE 01]</div>
         </section>
 
-        <section class="section">
+        <!-- Content with Sidebar -->
+        <section class="arch-section">
             <div class="container-custom">
-                <div class="content-grid">
+                <div class="arch-layout">
+
+                    <!-- Sidebar -->
+                    <div class="arch-sidebar">
+                        <div class="arch-sidebar-nav">
+                            <a href="#silhouette" class="arch-sidebar-link active"><span class="num">01.</span> СИЛУЭТ</a>
+                            <a href="#materials" class="arch-sidebar-link"><span class="num">02.</span> МАТЕРИАЛЫ</a>
+                            <a href="#views" class="arch-sidebar-link"><span class="num">03.</span> ВИДЫ И СВЕТ</a>
+                            <a href="#evening" class="arch-sidebar-link"><span class="num">04.</span> ВЕЧЕРНИЙ ОБРАЗ</a>
+                            <a href="#vision" class="arch-sidebar-link"><span class="num">05.</span> ВИДЕНИЕ</a>
+                            <a href="#gallery" class="arch-sidebar-link"><span class="num">06.</span> ГАЛЕРЕЯ</a>
+                        </div>
+                    </div>
+
+                    <!-- Main Content -->
                     <div>
-                        <h2 class="section-title">Фасады</h2>
-                        <p class="text-secondary mb-4">
-                            Фасады ЖК «Ленская» выполнены с использованием системы вентилируемых фасадов 
-                            с облицовкой из натурального камня. Такое решение обеспечивает не только 
-                            престижный внешний вид, но и надежную защиту от внешних воздействий.
-                        </p>
-                        <div class="advantages-list">
-                            <div class="advantage-item">
-                                <div class="advantage-icon">
-                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h3 class="advantage-title">Вентилируемые фасады</h3>
-                                    <p class="text-secondary">Система навесного фасада с воздушным зазором для эффективной теплоизоляции</p>
-                                </div>
+                        <!-- Section 01: Terraced Silhouette -->
+                        <div id="silhouette" class="arch-section animate-hidden">
+                            <div class="arch-section-header">
+                                <div class="arch-accent-line"></div>
+                                <h2 class="arch-section-title">01. ТЕРРАСНЫЙ<br>СИЛУЭТ</h2>
                             </div>
-                            <div class="advantage-item">
-                                <div class="advantage-icon">
-                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                </div>
+                            <div class="arch-two-col">
                                 <div>
-                                    <h3 class="advantage-title">Натуральный камень</h3>
-                                    <p class="text-secondary">Облицовка из природного камня подчеркивает статус комплекса</p>
+                                    <div class="arch-image-placeholder large">[ARCH PAGE 05]</div>
+                                    <p class="arch-image-caption">Дневной вид на террасную застройку</p>
                                 </div>
-                            </div>
-                            <div class="advantage-item">
-                                <div class="advantage-icon">
-                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h3 class="advantage-title">Панорамное остекление</h3>
-                                    <p class="text-secondary">Витражные окна от пола до потолка для максимального естественного света</p>
-                                </div>
-                            </div>
-                            <div class="advantage-item">
-                                <div class="advantage-icon">
-                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h3 class="advantage-title">Энергоэффективность класса А</h3>
-                                    <p class="text-secondary">Минимальные затраты на отопление и кондиционирование</p>
+                                <div class="arch-drawings">
+                                    <div class="arch-drawing">
+                                        <div class="arch-drawing-placeholder">Чертёж фасада</div>
+                                        <p class="arch-drawing-text">Ступенчатая структура здания обеспечивает максимальное проникновение естественного света в каждую квартиру и открывает панорамные виды на реку Каму.</p>
+                                    </div>
+                                    <div class="arch-drawing">
+                                        <div class="arch-drawing-placeholder">Разрез здания</div>
+                                        <p class="arch-drawing-text">Террасные ярусы создают приватные открытые пространства для каждого этажа, формируя уникальный силуэт комплекса на набережной.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="image-placeholder">
-                        <p>Фото фасада</p>
-                    </div>
-                </div>
 
-                <div class="content-grid" style="margin-top: 4rem;">
-                    <div class="image-placeholder">
-                        <p>Фото планировки</p>
-                    </div>
-                    <div>
-                        <h2 class="section-title">Планировки</h2>
-                        <p class="text-secondary mb-4">
-                            Квартиры в ЖК «Ленская» спроектированы с учетом современных требований 
-                            к комфорту и функциональности. Свободные планировки позволяют создать 
-                            идеальное пространство для жизни.
-                        </p>
-                        <div class="advantages-list">
-                            <div class="advantage-item">
-                                <div class="advantage-icon">
-                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
+                        <!-- Section 02: Materials -->
+                        <div id="materials" class="arch-section animate-hidden">
+                            <div class="arch-section-header">
+                                <div class="arch-accent-line"></div>
+                                <h2 class="arch-section-title">02. МАТЕРИАЛЫ</h2>
+                            </div>
+                            <div class="arch-gallery">
+                                <div class="arch-gallery-item">
+                                    <div class="arch-gallery-img">[ARCH PAGE 03]</div>
+                                    <p class="arch-gallery-caption">Натуральный камень — природная текстура и долговечность</p>
                                 </div>
-                                <div>
-                                    <h3 class="advantage-title">Потолки 3,1 м</h3>
-                                    <p class="text-secondary">Увеличенная высота потолков для ощущения простора и свободы</p>
+                                <div class="arch-gallery-item">
+                                    <div class="arch-gallery-img">[ARCH PAGE 03]</div>
+                                    <p class="arch-gallery-caption">Брашированный металл — современная элегантность фасадов</p>
+                                </div>
+                                <div class="arch-gallery-item">
+                                    <div class="arch-gallery-img">[ARCH PAGE 03]</div>
+                                    <p class="arch-gallery-caption">Панорамное остекление — свет и виды в каждой квартире</p>
                                 </div>
                             </div>
-                            <div class="advantage-item">
-                                <div class="advantage-icon">
-                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
+                            <div class="arch-advantages">
+                                <div class="arch-advantage">
+                                    <div class="arch-advantage-icon">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    </div>
+                                    <div class="arch-advantage-text">
+                                        <h4>Вентилируемые фасады</h4>
+                                        <p>Система навесного фасада с воздушным зазором для эффективной теплоизоляции</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h3 class="advantage-title">Панорамные окна</h3>
-                                    <p class="text-secondary">Окна во всю стену с видом на реку и городскую панораму</p>
-                                </div>
-                            </div>
-                            <div class="advantage-item">
-                                <div class="advantage-icon">
-                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h3 class="advantage-title">Свободная планировка</h3>
-                                    <p class="text-secondary">Возможность индивидуального проектирования пространства квартиры</p>
+                                <div class="arch-advantage">
+                                    <div class="arch-advantage-icon">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    </div>
+                                    <div class="arch-advantage-text">
+                                        <h4>Энергоэффективность класса А</h4>
+                                        <p>Минимальные затраты на отопление и кондиционирование</p>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+
+                        <!-- Section 03: Views & Daylight -->
+                        <div id="views" class="arch-section animate-hidden">
+                            <div class="arch-section-header">
+                                <div class="arch-accent-line"></div>
+                                <h2 class="arch-section-title">03. ВИДЫ<br>И СВЕТ</h2>
+                            </div>
+                            <div class="arch-two-col">
+                                <div>
+                                    <div class="arch-image-placeholder large">[ARCH PAGE 04]</div>
+                                    <p class="arch-image-caption">Панорамные виды на реку Каму из квартир</p>
+                                </div>
+                                <div>
+                                    <p style="font-size: 1.125rem; line-height: 1.8; color: var(--color-primary-600); margin-bottom: 2rem;">
+                                        Каждая квартира спроектирована так, чтобы максимально использовать 
+                                        естественный свет и открывать виды на водную гладь Камы, зелёные 
+                                        массивы Закамского Бора и городскую панораму Перми.
+                                    </p>
+                                    <div class="arch-advantages">
+                                        <div class="arch-advantage">
+                                            <div class="arch-advantage-icon">
+                                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"></path></svg>
+                                            </div>
+                                            <div class="arch-advantage-text">
+                                                <h4>Ориентация на юг и запад</h4>
+                                                <p>Максимум солнечного света в дневные часы</p>
+                                            </div>
+                                        </div>
+                                        <div class="arch-advantage">
+                                            <div class="arch-advantage-icon">
+                                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                                            </div>
+                                            <div class="arch-advantage-text">
+                                                <h4>Панорамное остекление</h4>
+                                                <p>Витражные окна от пола до потолка</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section 04: Evening Atmosphere -->
+                        <div id="evening" class="arch-section animate-hidden">
+                            <div class="arch-section-header">
+                                <div class="arch-accent-line"></div>
+                                <h2 class="arch-section-title">04. ВЕЧЕРНЯЯ<br>АТМОСФЕРА</h2>
+                            </div>
+                            <div class="arch-image-placeholder large" style="aspect-ratio: 21/9;">[ARCH PAGE 02]</div>
+                            <p class="arch-image-caption" style="margin-top: 1rem;">Вечерний вид на комплекс с подсветкой фасадов</p>
+                            <p style="font-size: 1.125rem; line-height: 1.8; color: var(--color-primary-600); margin-top: 2rem; max-width: 800px;">
+                                Вечерняя подсветка фасадов создаёт уникальный образ комплекса на набережной. 
+                                Тёплый свет из окон квартир гармонирует с отражениями в водной глади Камы, 
+                                формируя атмосферу уюта и премиального комфорта.
+                            </p>
+                        </div>
+
+                        <!-- Section 05: Architect's Vision -->
+                        <div id="vision" class="arch-section animate-hidden">
+                            <div class="arch-section-header">
+                                <div class="arch-accent-line"></div>
+                                <h2 class="arch-section-title">05. ВИДЕНИЕ<br>АРХИТЕКТОРА</h2>
+                            </div>
+                            <div class="arch-two-col">
+                                <div>
+                                    <p style="font-size: 1.125rem; line-height: 1.8; color: var(--color-primary-600); margin-bottom: 2rem;">
+                                        «Мы создали архитектуру, которая дышит вместе с природой. 
+                                        Террасные ярусы — это не просто форма, а способ жить ближе к воде, 
+                                        к небу, к себе. Каждый балкон — это продолжение квартиры, 
+                                        каждый вид — продолжение жизни.»
+                                    </p>
+                                    <p style="font-weight: 600; color: var(--color-graphite);">— Главный архитектор проекта</p>
+                                </div>
+                                <div>
+                                    <div class="arch-image-placeholder">[ARCH PAGE 06]</div>
+                                    <p class="arch-image-caption">Эскиз концепции террасной застройки</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section 06: Gallery -->
+                        <div id="gallery" class="arch-section animate-hidden">
+                            <div class="arch-section-header">
+                                <div class="arch-accent-line"></div>
+                                <h2 class="arch-section-title">06. ГАЛЕРЕЯ</h2>
+                            </div>
+                            <div class="arch-gallery">
+                                <div class="arch-gallery-item">
+                                    <div class="arch-gallery-img">[ARCH 01]</div>
+                                    <p class="arch-gallery-caption">Общий вид комплекса со стороны набережной</p>
+                                </div>
+                                <div class="arch-gallery-item">
+                                    <div class="arch-gallery-img">[ARCH 02]</div>
+                                    <p class="arch-gallery-caption">Вечерний силуэт зданий</p>
+                                </div>
+                                <div class="arch-gallery-item">
+                                    <div class="arch-gallery-img">[ARCH 03]</div>
+                                    <p class="arch-gallery-caption">Деталь фасада — стык материалов</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA -->
+                        <div class="arch-cta">
+                            <a href="catalog.html" class="btn btn-primary" style="margin-right: 1rem;">ВЫБРАТЬ КВАРТИРУ</a>
+                            <a href="gallery.html" class="btn btn-secondary">СМОТРЕТЬ ГАЛЕРЕЮ</a>
                         </div>
                     </div>
                 </div>
@@ -199,92 +613,28 @@
     <!-- Footer -->
     <footer class="footer" id="contacts">
         <div class="container-custom">
-            <div class="footer-grid">
-                <div>
-                    <div class="footer-logo">
-                        <div class="footer-logo-icon">Л</div>
-                        <div class="logo-text-container">
-                            <span class="footer-logo-text">Ленская</span>
-                            <span class="logo-subtitle" style="color: var(--color-primary-400);">Премиальный ЖК</span>
-                        </div>
-                    </div>
-                    <p class="footer-desc">
-                        Премиальный жилой комплекс бизнес-класса на правом берегу Камы в Перми. 
-                        Современная архитектура, благоустроенная территория и развитая инфраструктура.
-                    </p>
-                    <div class="footer-social">
-                        <a href="https://t.me/lenskaya" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Telegram">
-                            <svg fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.692-1.653-1.123-2.678-1.799-1.185-.78-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.492-1.302.487-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-                            </svg>
-                        </a>
-                        <a href="https://vk.com/lenskaya" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="VK">
-                            <svg fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 13.222c.478.464.988.907 1.39 1.449.18.24.348.491.425.788.112.44-.199.625-.558.643h-1.942c-.482.044-.864-.154-1.195-.444-.262-.232-.507-.484-.76-.726-.104-.1-.213-.195-.339-.26-.243-.127-.452-.078-.584.164-.134.248-.163.523-.179.802-.024.422-.154.533-.577.557-1.05.06-2.04-.112-2.93-.67-1.013-.637-1.79-1.5-2.46-2.49-1.278-1.887-2.24-3.95-3.07-6.08-.194-.496-.06-.756.477-.77.556-.014 1.112-.014 1.668 0 .432.008.62.218.754.644.56 1.767 1.302 3.45 2.224 5.034.24.408.48.824.844 1.134.365.31.645.208.832-.228.096-.224.136-.46.156-.7.066-.794.07-1.589-.046-2.38-.062-.42-.292-.698-.707-.79-.213-.048-.182-.125-.078-.22.19-.174.387-.283.765-.283h1.82c.284.056.35.188.388.472l.002 2.016c-.005.135.068.537.312.625.196.064.325-.093.44-.224.33-.376.568-.81.78-1.256.374-.792.658-1.627.924-2.478.11-.351.278-.518.668-.513.39.005.78.003 1.17.003.424.006.64.176.724.6.168.85.172 1.707.006 2.56-.12.613-.362 1.18-.63 1.732-.218.447-.452.885-.682 1.326-.2.382-.186.567.15.857z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="footer-title">О проекте</h4>
-                    <ul class="footer-links">
-                        <li><a href="about.html">О комплексе</a></li>
-                        <li><a href="architecture.html">Архитектура</a></li>
-                        <li><a href="improvement.html">Благоустройство</a></li>
-                        <li><a href="location.html">Расположение</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="footer-title">Квартиры</h4>
-                    <ul class="footer-links">
-                        <li><a href="catalog.html">Каталог квартир</a></li>
-                        <li><a href="progress.html">Ход проекта</a></li>
-                        <li><a href="gallery.html">Галерея</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="footer-title">Информация</h4>
-                    <ul class="footer-links">
-                        <li><a href="news.html">Новости</a></li>
-                        <li><a href="contacts.html">Контакты</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="footer-title">Контакты</h4>
-                    <div style="display: flex; flex-direction: column; gap: 1rem;">
-                        <a href="tel:+73421234567" class="footer-contact-item">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                            </svg>
-                            <span>+7 (342) 123-45-67</span>
-                        </a>
-                        <a href="mailto:info@lenskaya.ru" class="footer-contact-item">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                            </svg>
-                            <span>info@lenskaya.ru</span>
-                        </a>
-                        <div class="footer-contact-item">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            </svg>
-                            <span>г. Пермь, ул. Ленская, 1</span>
-                        </div>
-                        <div class="footer-contact-item">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                            <span>Пн-Вс: 9:00 - 21:00</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="footer-nav">
+                <a href="about.html">ПРОЕКТ</a>
+                <a href="architecture.html">АРХИТЕКТУРА</a>
+                <a href="location.html">РАСПОЛОЖЕНИЕ</a>
+                <a href="catalog.html">КВАРТИРЫ</a>
+                <a href="gallery.html">ГАЛЕРЕЯ</a>
+                <a href="contacts.html">КОНТАКТЫ</a>
+            </div>
+            <div class="footer-contact-info">
+                <p>Пермь Резиденс, Пермь, Россия.</p>
+                <p>+7 (342) 123-45-67 | info@permresidence.ru</p>
+            </div>
+            <div class="footer-social">
+                <a href="https://t.me/lenskaya" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Telegram">
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.692-1.653-1.123-2.678-1.799-1.185-.78-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.492-1.302.487-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                </a>
+                <a href="https://vk.com/lenskaya" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="VK">
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 13.222c.478.464.988.907 1.39 1.449.18.24.348.491.425.788.112.44-.199.625-.558.643h-1.942c-.482.044-.864-.154-1.195-.444-.262-.232-.507-.484-.76-.726-.104-.1-.213-.195-.339-.26-.243-.127-.452-.078-.584.164-.134.248-.163.523-.179.802-.024.422-.154.533-.577.557-1.05.06-2.04-.112-2.93-.67-1.013-.637-1.79-1.5-2.46-2.49-1.278-1.887-2.24-3.95-3.07-6.08-.194-.496-.06-.756.477-.77.556-.014 1.112-.014 1.668 0 .432.008.62.218.754.644.56 1.767 1.302 3.45 2.224 5.034.24.408.48.824.844 1.134.365.31.645.208.832-.228.096-.224.136-.46.156-.7.066-.794.07-1.589-.046-2.38-.062-.42-.292-.698-.707-.79-.213-.048-.182-.125-.078-.22.19-.174.387-.283.765-.283h1.82c.284.056.35.188.388.472l.002 2.016c-.005.135.068.537.312.625.196.064.325-.093.44-.224.33-.376.568-.81.78-1.256.374-.792.658-1.627.924-2.478.11-.351.278-.518.668-.513.39.005.78.003 1.17.003.424.006.64.176.724.6.168.85.172 1.707.006 2.56-.12.613-.362 1.18-.63 1.732-.218.447-.452.885-.682 1.326-.2.382-.186.567.15.857z"/></svg>
+                </a>
             </div>
             <div class="footer-bottom">
-                <p class="footer-copyright">© 2024 ЖК «Ленская». Все права защищены.</p>
-                <div class="footer-bottom-links">
-                    <a href="privacy.html">Политика конфиденциальности</a>
-                </div>
+                <p class="footer-copyright">© 2024 ПЕРМЬ РЕЗИДЕНС. ВСЕ ПРАВА ЗАЩИЩЕНЫ.</p>
             </div>
         </div>
     </footer>
@@ -295,9 +645,7 @@
             <div class="modal-header">
                 <h3>Записаться на просмотр</h3>
                 <button class="modal-close" id="modalClose">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                 </button>
             </div>
             <form id="consultationForm">
@@ -317,11 +665,39 @@
                     <label for="message">Сообщение (необязательно)</label>
                     <textarea id="message" name="message" placeholder="Расскажите, что вас интересует"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Отправить заявку</button>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">ОТПРАВИТЬ ЗАЯВКУ</button>
             </form>
         </div>
     </div>
 
     <script src="common.js"></script>
+    <script>
+        // Scroll animations
+        const animatedElements = document.querySelectorAll('.animate-hidden');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        animatedElements.forEach(el => observer.observe(el));
+
+        // Sidebar active state on scroll
+        const sections = document.querySelectorAll('[id]');
+        const sidebarLinks = document.querySelectorAll('.arch-sidebar-link');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.scrollY >= sectionTop - 200) current = section.id;
+            });
+            sidebarLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
