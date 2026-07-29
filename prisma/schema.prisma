@@ -1,0 +1,156 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Apartment {
+  id          String   @id @default(uuid())
+  number      Int
+  floor       Int
+  rooms       Int      @default(0) // 0 = studio
+  areaTotal   Float
+  areaLiving  Float?
+  areaKitchen Float?
+  building    String
+  section     String
+  hasBalcony  Boolean  @default(false)
+  hasTerrace  Boolean  @default(false)
+  status      String   @default("free") // free, booked, sold, unpublished
+  price       Float?
+  currency    String   @default("RUB")
+  seoData     Json?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  media       ApartmentMedia[]
+  leads       Lead[]
+  favorites   Favorite[]
+
+  @@index([status, rooms, price, totalArea])
+  @@index([building, floor])
+}
+
+model ApartmentMedia {
+  id          String   @id @default(uuid())
+  apartmentId String
+  url         String
+  type        String   @default("image") // image, floorPlan, video
+  alt         String?
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+
+  apartment   Apartment @relation(fields: [apartmentId], references: [id])
+
+  @@index([apartmentId])
+}
+
+model Lead {
+  id          String   @id @default(uuid())
+  name        String
+  phone       String
+  email       String?
+  type        String   // callback, booking, question, consultation, mortgage
+  apartmentId String?
+  message     String?
+  utmSource   String?
+  utmMedium   String?
+  utmCampaign String?
+  status      String   @default("new") // new, processing, completed, cancelled
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  apartment   Apartment? @relation(fields: [apartmentId], references: [id])
+  events      LeadEvent[]
+
+  @@index([source, status, createdAt])
+  @@index([apartmentId])
+}
+
+model LeadEvent {
+  id        String   @id @default(uuid())
+  leadId    String
+  type      String   // call, email, meeting, note
+  comment   String?
+  createdAt DateTime @default(now())
+
+  lead      Lead     @relation(fields: [leadId], references: [id])
+
+  @@index([leadId])
+}
+
+model Favorite {
+  id          String   @id @default(uuid())
+  sessionId   String
+  apartmentId String
+  createdAt   DateTime @default(now())
+
+  apartment   Apartment @relation(fields: [apartmentId], references: [id])
+
+  @@unique([sessionId, apartmentId])
+  @@index([sessionId])
+}
+
+model Page {
+  id            String   @id @default(uuid())
+  slug          String   @unique
+  title         String
+  description   String?
+  metaTitle     String?
+  metaDescription String?
+  ogImage       String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  sections      PageSection[]
+}
+
+model PageSection {
+  id        String   @id @default(uuid())
+  pageId    String
+  type      String   // hero, text, image, gallery, cta, etc.
+  title     String?
+  content   String?
+  imageUrl  String?
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+
+  page      Page     @relation(fields: [pageId], references: [id])
+
+  @@index([pageId])
+}
+
+model Settings {
+  id    String @id @default(uuid())
+  key   String @unique
+  value Json
+}
+
+model AdminUser {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  role         String   @default("admin") // admin, editor
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  userId    String?
+  action    String
+  entity    String
+  entityId  String?
+  details   Json?
+  createdAt DateTime @default(now())
+
+  @@index([userId, createdAt])
+  @@index([entity, entityId])
+}
