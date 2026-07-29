@@ -112,6 +112,7 @@ body {
     gap: 12px;
     text-decoration: none;
     color: white;
+    flex-shrink: 0;
 }
 
 .logo-icon {
@@ -146,7 +147,9 @@ body {
 
 .nav {
     display: none;
-    gap: 2rem;
+    gap: 1.25rem;
+    flex: 1;
+    justify-content: center;
 }
 
 @media (min-width: 1024px) {
@@ -155,10 +158,20 @@ body {
     }
 }
 
+@media (min-width: 1280px) {
+    .nav {
+        gap: 1.75rem;
+    }
+
+    .nav a {
+        font-size: 0.875rem;
+    }
+}
+
 .nav a {
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     font-weight: 500;
     transition: color 0.2s;
 }
@@ -176,6 +189,7 @@ body {
     display: flex;
     align-items: center;
     gap: 1rem;
+    flex-shrink: 0;
 }
 
 /* Buttons */
